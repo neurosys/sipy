@@ -1,0 +1,209 @@
+<OPTIONS sip:{domain} SIP/2.0
+<Via: SIP/2.0/UDP {local_ip}:{local_port};rport;branch={branch}
+<From: <sip:{domain}>;tag=faf686a1be5f174e
+<To: <sip:{domain}>
+<Call-ID: {call_id_options}
+<CSeq: {cseq} OPTIONS
+<Contact: <sip:{local_ip}:{local_port};transport=udp>
+<Max-Forwards: 70
+<Allow: INVITE,ACK,CANCEL,OPTIONS,BYE,INFO,REFER,NOTIFY,UPDATE
+<Supported: timer
+<User-Agent: IP Office 9.0.0.0 build 800
+<Content-Length: 0
+=================================================================================
+>SIP/2.0 200 OK
+=================================================================================
+<INVITE sip:{service}@{domain} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>
+<CSeq: 1 INVITE
+<Call-ID: {call_id}
+<Contact: {from_display_name} <sip:{from_number}@{local_ip}:{local_port};gsid=909fb2c0-d430-11e2-aa29-842b2bface7a;epv=%3csip:{from_number}%40{domain}%3bgr%3dffddca1512e917d5a9ffa5e14ebb8f2d%3e>
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<Allow: INVITE, ACK, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE
+<Supported: 100rel, histinfo, join, replaces, sdp-anat, timer
+<User-Agent: Avaya one-X Deskphone AVAYA-SM-6.3.2.0.632023 Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 61
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-000654461072-1--s1632-
+<Accept-Language: en
+<Alert-Info: <cid:internal@{domain}>;avaya-cm-alert-type=internal
+<P-Asserted-Identity: {pai_display_name} <sip:{from_number}@{domain}>
+<Session-Expires: 1200;refresher=uac
+<Min-SE: 1200
+<Content-Type: application/sdp
+<P-AV-Message-Id: 1_2
+<Endpoint-View: <sip:{from_number}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<P-Charging-Vector: icid-value="909fb2c0-d430-11e2-aa29-842b2bface7a"
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<P-Location: SM;origlocname="Bucharest";origsiglocname="Bucharest";origmedialocname="Bucharest";orighomelocname="Bucharest";termlocname="Bucharest";termsiglocname="Bucharest";smaccounting="true"
+<Content-Length: 300
+<
+<v=0
+<o=- 1371131586 1 IN IP4 {local_ip}
+<s=-
+<c=IN IP4 {local_ip}
+<b=TIAS:64000
+<t=0 0
+<a=avf:avc=n prio=n
+<a=csup:avf-v0
+<m=audio 36008 RTP/AVP 8 0 18 120
+<a=sendrecv
+<a=rtpmap:8 PCMA/8000
+<a=rtpmap:0 PCMU/8000
+<a=rtpmap:18 G729/8000
+<a=fmtp:18 annexb=no
+<a=rtpmap:120 telephone-event/8000
+=================================================================================
+>SIP/2.0 100 Trying
+=================================================================================
+>SIP/2.0 180 Ringing
+=================================================================================
+>SIP/2.0 200 OK
+=================================================================================
+<ACK sip:{service}@{domain}:{remote_port} SIP/2.0
+<From: "Ina SIP" <sip:40807@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 2 ACK
+<Call-ID: {call_id}
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-000248928628-1--s1632-
+<P-Location: SM;origlocname="Bucharest";origsiglocname="Bucharest";origmedialocname="Bucharest";termlocname="Bucharest";termsiglocname="Bucharest";termmedialocname="Bucharest";smaccounting="true"
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<Endpoint-View: <sip:{service}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 0
+=================================================================================
+<UPDATE sip:{service}@{domain}:{remote_port} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 3 UPDATE
+<Call-ID: {call_id}
+<Contact: {contact2_display_name} <sip:{contact2_number}@{local_ip}:{local_port};gsid=909fb2c0-d430-11e2-aa29-842b2bface7a;epv=%3csip:40807%40{domain}%3bgr%3dffddca1512e917d5a9ffa5e14ebb8f2d%3e>
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<Allow: INVITE, ACK, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE
+<Supported: 100rel, histinfo, join, replaces, sdp-anat, timer
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-001931009205-1--s1632-
+<Accept-Language: en
+<P-Asserted-Identity: {contact2_display_name} <sip:{contact2_number}@{domain}>
+<Session-Expires: 1200;refresher=uac
+<Min-SE: 1200
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<P-Charging-Vector: icid-value="909fb2c0-d430-11e2-aa29-842b2bface7a"
+<Endpoint-View: <sip:{service}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 0
+=================================================================================
+>SIP/2.0 200 OK
+=================================================================================
+<INVITE sip:{service}@{remote_ip}:{remote_port} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 4 INVITE
+<Call-ID: {call_id}
+<Contact: {contact2_display_name} <sip:{contact2_number}@{local_ip}:{local_port};gsid=909fb2c0-d430-11e2-aa29-842b2bface7a;epv=%3csip:{from_number}%40{domain}%3bgr%3dffddca1512e917d5a9ffa5e14ebb8f2d%3e>
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<Allow: INVITE, ACK, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE
+<Supported: 100rel, histinfo, join, replaces, sdp-anat, timer
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-000106597334-1--s1632-
+<Accept-Language: en
+<P-Asserted-Identity: {contact2_display_name} <sip:{contact2_number}@{domain}>
+<Session-Expires: 1200;refresher=uac
+<Min-SE: 1200
+<Content-Type: application/sdp
+<P-Location: SM;origlocname="Bucharest";origsiglocname="Bucharest";origmedialocname="Bucharest";termlocname="Bucharest";termsiglocname="Bucharest";termmedialocname="Bucharest";smaccounting="true"
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<P-Charging-Vector: icid-value="909fb2c0-d430-11e2-aa29-842b2bface7a"
+<Endpoint-View: <sip:{from_number}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 248
+<
+<v=0
+<o=- 1371131586 2 IN IP4 {local_ip}
+<s=-
+<c=IN IP4 {local_ip}
+<b=AS:64
+<t=0 0
+<m=audio 36008 RTP/AVP 8 0 18 101
+<a=rtpmap:8 PCMA/8000
+<a=rtpmap:0 PCMU/8000
+<a=rtpmap:18 G729/8000
+<a=fmtp:18 annexb=no
+<a=rtpmap:101 telephone-event/8000
+=================================================================================
+>SIP/2.0 100 Trying
+=================================================================================
+>SIP/2.0 200 OK
+=================================================================================
+<ACK sip:{service}@{remote_ip}:{remote_port} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 5 ACK
+<Call-ID: {call_id}
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-001833352888-1--s1632-
+<Content-Type: application/sdp
+<P-Location: SM;origlocname="Bucharest";origsiglocname="Bucharest";origmedialocname="Bucharest";termlocname="Bucharest";termsiglocname="Bucharest";termmedialocname="Bucharest";smaccounting="true"
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<Endpoint-View: <sip:{from_number}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 178
+<
+<v=0
+<o=- 1371131586 3 IN IP4 {local_ip}
+<s=-
+<c=IN IP4 {local_ip}
+<b=AS:384
+<t=0 0
+<m=audio 36008 RTP/AVP 8 101
+<a=rtpmap:8 PCMA/8000
+<a=rtpmap:101 telephone-event/8000
+=================================================================================
+<UPDATE sip:{service}@{remote_ip}:{remote_port} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 6 UPDATE
+<Call-ID: {call_id}
+<Contact: {contact2_display_name} <sip:{contact2_number}@{local_ip}:{local_port};gsid=909fb2c0-d430-11e2-aa29-842b2bface7a;epv=%3csip:{from_number}%40{domain}%3bgr%3dffddca1512e917d5a9ffa5e14ebb8f2d%3e>
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<Allow: INVITE, ACK, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE
+<Supported: 100rel, histinfo, join, replaces, sdp-anat, timer
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-000712755537-1--s1632-
+<Accept-Language: en
+<P-Asserted-Identity: {contact2_display_name} <sip:{contact2_number}@{domain}>
+<Session-Expires: 1200;refresher=uac
+<Min-SE: 1200
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<P-Charging-Vector: icid-value="909fb2c0-d430-11e2-aa29-842b2bface7a"
+<Endpoint-View: <sip:{from_number}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 0
+=================================================================================
+<UPDATE sip:{service}@{remote_ip}:{remote_port} SIP/2.0
+<From: {from_display_name} <sip:{from_number}@{domain}>;tag=098c3313e0e212df451a3766100
+<To: <sip:{service}@{domain}>;tag={to_tag}
+<CSeq: 7 UPDATE
+<Call-ID: {call_id}
+<Contact: "To ASM1" <sip:{local_ip}:{local_port};gsid=909fb2c0-d430-11e2-aa29-842b2bface7a;epv=%3csip:{from_number}%40{domain}%3bgr%3dffddca1512e917d5a9ffa5e14ebb8f2d%3e>
+<Record-Route: <sip:{local_ip}:{local_port};ipcs-line=2344882;lr;transport=udp>
+<Allow: INVITE, ACK, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE
+<Supported: 100rel, histinfo, join, replaces, sdp-anat, timer
+<User-Agent: Avaya CM/R016x.03.0.124.0 AVAYA-SM-6.3.2.0.632023
+<Max-Forwards: 66
+<Via: SIP/2.0/UDP {local_ip}:{local_port};branch=z9hG4bK-s1632-001292086963-1--s1632-
+<Accept-Language: en
+<Privacy: id
+<P-Asserted-Identity: <sip:8123456781@{domain}>
+<Session-Expires: 1200;refresher=uac
+<Min-SE: 1200
+<Av-Global-Session-ID: 909fb2c0-d430-11e2-aa29-842b2bface7a
+<P-Charging-Vector: icid-value="909fb2c0-d430-11e2-aa29-842b2bface7a"
+<Endpoint-View: <sip:{from_number}@{domain};gr=ffddca1512e917d5a9ffa5e14ebb8f2d>;local-tag=10f4ae8551b9dccd51c09efc_F4080794.177.6.233;call-id=5a_6c02c-1a7e432c51c09d00_I@94.177.6.233
+<Content-Length: 0
+=================================================================================
+>SIP/2.0 200 OK
+=================================================================================
